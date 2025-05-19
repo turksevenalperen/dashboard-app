@@ -36,14 +36,4 @@ model User {
   updatedAt DateTime @updatedAt
 
   projects Project[]
-
-  Activity Activity[]
-}
-
-model Activity {
-  id        String   @id @default(cuid())
-  user      User     @relation(fields: [userId], references: [id])
-  userId    String
-  action    String // Örn: "Google", "WhatsApp", "Visual Studio Code"
-  timestamp DateTime @default(now())
 }
